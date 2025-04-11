@@ -2,6 +2,7 @@ import TextForm from '../components/TextForm';
 import Data from '../components/Data';
 import Alert from '../components/Alert';
 import {useState} from 'react';
+import { UserProvider } from '../context/UserContext';
 
 function Home() {
   const [alert, setAlert] = useState(null);
@@ -22,7 +23,9 @@ function Home() {
           <TextForm showAlert={showAlert} />
         </div>
         <div className='col-6'>
-          <Data />
+          <UserProvider>
+            <Data />
+          </UserProvider>
         </div>
       </div>
 

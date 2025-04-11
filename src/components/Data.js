@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
+import User from './User';
 
 export default function Data() {
     const [users, setUsers] = useState([]);
@@ -64,6 +65,10 @@ export default function Data() {
                         }
                     </ul>
                     <button className="btn btn-primary btn-sm" onClick={() => changeName(4)}>Change Name</button>
+
+                    <hr />
+
+                    <User />
                 </div>
             }
         </div>
