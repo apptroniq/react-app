@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/175.63f4543f.chunk.js","mappings":"+IAAe,SAASA,IACpB,OACIC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,4BAIb,C","sources":["pages/AboutCompany.js"],"sourcesContent":["export default function About () {\n    return (\n        <div>\n            hello about company page\n        </div>\n    );\n}"],"names":["About","_jsx","children"],"sourceRoot":""}

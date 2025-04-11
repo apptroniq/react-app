@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksbp_admin=self.webpackChunksbp_admin||[]).push([[175],{175:(e,a,n)=>{n.r(a),n.d(a,{default:()=>u});var s=n(579);function u(){return(0,s.jsx)("div",{children:"hello about company page"})}}}]);
+//# sourceMappingURL=175.63f4543f.chunk.js.map
