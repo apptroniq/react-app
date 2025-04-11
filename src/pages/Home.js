@@ -1,8 +1,8 @@
 import TextForm from '../components/TextForm';
+import Data from '../components/Data';
 import Alert from '../components/Alert';
 import {useState} from 'react';
 
-let name = "Asfund";
 function Home() {
   const [alert, setAlert] = useState(null);
   const showAlert = (msg, type) => {
@@ -21,7 +21,9 @@ function Home() {
         <div className='col-6'>
           <TextForm showAlert={showAlert} />
         </div>
-        <div className='col-6'>{name}</div>
+        <div className='col-6'>
+          <Data />
+        </div>
       </div>
 
       <div className='row mt-5'>

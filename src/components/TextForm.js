@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Alert from './Alert';
 
 export default function TextForm ({heading = "Form", ...props}) {
@@ -6,7 +6,12 @@ export default function TextForm ({heading = "Form", ...props}) {
     const [email, setEmail] = useState("asfund@me.com");
     const [phone, setPhone] = useState("");
 
+    const emailInputFocus = useRef(null);
+
     const handleSubmit = () => {
+        emailInputFocus.current.focus();
+        console.log(emailInputFocus);
+
         let msg = "", type = "";
         if (!phone || !email) {
             msg = "Please fill email and phone";
@@ -44,7 +49,7 @@ export default function TextForm ({heading = "Form", ...props}) {
         {/* <form> */}
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                <input type="email" className="form-control" onChange={handleEmailChange} value={email} id="exampleInputEmail1"/>
+                <input type="email" ref={emailInputFocus} className="form-control" onChange={handleEmailChange} value={email} id="exampleInputEmail1"/>
                 <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div className="mb-3">

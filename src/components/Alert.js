@@ -6,6 +6,15 @@ export default function Alert({ showCloseBtn = false, ...props }) {
         setHide(true);
     }
     useEffect(() => {
+        console.log("alert created");
+    }, []);
+    useEffect(() => {
+        return () => {
+            console.log("destroy/unmounted");
+        }
+    }, []);
+    useEffect(() => {
+        console.log("alert changed");
         if (props.alert && props.alert.msg) {
             setHide(false);
         }

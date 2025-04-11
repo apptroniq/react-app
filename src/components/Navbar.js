@@ -3,6 +3,7 @@
 import { Link } from 'react-router-dom';
 
 export default function Navbar({ title = "Pakistan" }) {
+    // throw new Error('Simulated crash!');
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
