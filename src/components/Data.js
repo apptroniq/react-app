@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import axios from 'axios';
 import User from './User';
+import { UserContext } from '../context/UserContext';
 
-export default function Data() {
+const Data = () => {
     const [users, setUsers] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const {user, changeValue} = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -47,6 +49,11 @@ export default function Data() {
             return buUsers;
         });
     }
+
+    const userClick = (user) => {
+        console.log(user);
+        changeValue(user);
+    }
     
     return (
         <div>
@@ -60,7 +67,7 @@ export default function Data() {
                     <ul>
                         {
                             users.map(user => (
-                                <li key={user.id}>{user.name}</li>
+                                <li onClick={() => userClick(user)} key={user.id}>{user.name}</li>
                             ))
                         }
                     </ul>
@@ -69,8 +76,11 @@ export default function Data() {
                     <hr />
 
                     <User />
+                    {user.name}
                 </div>
             }
         </div>
     )
 }
+
+export default Data;
